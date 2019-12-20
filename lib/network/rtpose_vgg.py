@@ -92,6 +92,7 @@ def get_model(trunk='vgg19'):
                   {'conv4_4_CPM': [256, 128, 1, 3, 1]}]
 
     # Stage 1
+
     blocks['block1_1'] = [{'conv5_1_CPM_L1': [128, 128, 3, 1, 1]},
                           {'conv5_2_CPM_L1': [128, 128, 3, 1, 1]},
                           {'conv5_3_CPM_L1': [128, 128, 3, 1, 1]},

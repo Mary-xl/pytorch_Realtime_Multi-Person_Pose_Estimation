@@ -8,9 +8,9 @@ import torch
 import torch.nn as nn
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 
-from lib.network.rtpose_vgg import get_model, use_vgg
-from lib.datasets import coco, transforms, datasets
-from lib.config import update_config
+from .lib.network.rtpose_vgg import get_model, use_vgg
+from .lib.datasets import coco, transforms, datasets
+from .lib.config import update_config
 
 DATA_DIR = '/data/coco'
 
@@ -196,7 +196,15 @@ def train(train_loader, model, optimizer, epoch):
         #writer.add_text('Text', 'text logged at step:' + str(i), i)
         
         #for name, param in model.named_parameters():
-        #    writer.add_histogram(name, param.clone().cpu().data.numpy(),i)        
+        #    writer.add_histogram(name, param.clone().cpu().data.numpy(),i)
+        #========visualize heatmap and paf===========
+        for i in range  (0,71):
+            for j in range (0,18):
+                heatmap_i=heatmap_target[i][j].numpy()
+                paf_i=paf_target[i][j].numpy()
+                print ('ok')
+        #==============================================
+
         data_time.update(time.time() - end)
 
         img = img.cuda()
