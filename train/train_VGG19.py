@@ -10,8 +10,7 @@ from lib.network.rtpose_vgg import get_model, use_vgg
 from lib.datasets import coco, transforms, datasets
 from lib.config import update_config
 import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+sys.path.append('/students/julyedu_579196/pytorch_Realtime_Multi-Person_Pose_Estimation/')
 
 DATA_DIR = '/data/coco'
 
