@@ -9,10 +9,9 @@ from torch.optim.lr_scheduler import ReduceLROnPlateau
 from lib.network.rtpose_vgg import get_model, use_vgg
 from lib.datasets import coco, transforms, datasets
 from lib.config import update_config
-import sys
-sys.path.append('/students/julyedu_579196/pytorch_Realtime_Multi-Person_Pose_Estimation/')
 
-DATA_DIR = '/data/coco'
+
+DATA_DIR = '/data/COCO2017'
 
 ANNOTATIONS_TRAIN = [os.path.join(DATA_DIR, 'annotations', item) for item in ['person_keypoints_train2017.json']]
 ANNOTATIONS_VAL = os.path.join(DATA_DIR, 'annotations', 'person_keypoints_val2017.json')
